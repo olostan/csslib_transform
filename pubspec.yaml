@@ -1,5 +1,5 @@
 name: csslib_transform
-version: 0.0.3
+version: 0.0.4
 author: Valentyn Shybanov <olostan@gmail.com>
 description: A transformer that use CSSLib to transform scss files to css
 homepage: https://github.com/olostan/csslib_transform
