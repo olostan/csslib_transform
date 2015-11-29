@@ -11,9 +11,16 @@ import 'package:barback/barback.dart';
 import 'dart:async';
 import 'package:csslib/parser.dart' show compile;
 import 'package:csslib/src/messages.dart';
+import 'package:csslib/src/options.dart';
 import 'package:csslib/visitor.dart';
 import 'package:logging/logging.dart';
 //import 'package:csslib/css.dart';
+
+const csslibOptions = const PreprocessorOptions(
+    useColors: true,
+    checked: true,
+    polyfill: true,
+    inputFile: 'memory');
 
 class CSSLib_Tranform extends Transformer {
   String copyright = "Copyright (c) 2015, Valentyn Shybanov (olostan).\n";
@@ -26,7 +33,7 @@ class CSSLib_Tranform extends Transformer {
     var content = await transform.primaryInput.readAsString();
     var id = transform.primaryInput.id.changeExtension('.css');
     var errors = new List<Message>();
-    var stylesheet = compile(content,errors:errors);
+    var stylesheet = compile(content,errors:errors,options:csslibOptions,polyfill:true);
     var emitCss = new CssPrinter();
     var result = (emitCss..visitTree(stylesheet, pretty: true)).toString();
     errors.forEach((m) {
