@@ -1,12 +1,10 @@
 name: csslib_transform
-version: 0.0.4
+version: 0.0.4+1
 author: Valentyn Shybanov <olostan@gmail.com>
 description: A transformer that use CSSLib to transform scss files to css
 homepage: https://github.com/olostan/csslib_transform
 documentation: https://github.com/olostan/csslib_transform/blob/master/README.md
 dependencies:
-  barback: '>=0.15.2+4 <0.16.0'
-  csslib: '>=0.11.0+4 <0.20.0'
-  logging: '>=0.9.3 <0.10.0'
-dev_dependencies:
-  unittest: any
+  barback: '>=0.15.2+4 <1.0.0'
+  csslib: '>=0.11.0+4 <1.0.0'
+  logging: '>=0.9.3 <1.0.0'
